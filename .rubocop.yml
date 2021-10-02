@@ -1,0 +1,8 @@
+AllCops:
+  NewCops: enable
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/*'
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/*'
