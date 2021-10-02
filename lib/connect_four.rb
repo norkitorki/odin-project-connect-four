@@ -17,6 +17,7 @@ class ConnectFour
 
   def play
     loop do
+      system('clear')
       puts grid_board
       place(player_input)
       break post_game if game_over? || draw?
