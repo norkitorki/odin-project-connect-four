@@ -20,17 +20,17 @@ class Grid
     if column_full?(column)
       puts "Column #{column} is full."
     else
-      index = grid[column].rindex(' ')
+      index = grid[column].rindex('◯')
       grid[column][index] = disk
     end
   end
 
   def reset
-    @grid = Array.new(rows) { Array.new(columns, ' ') }
+    @grid = Array.new(rows) { Array.new(columns, '◯') }
   end
 
   def column_full?(column)
-    grid[column]&.none?(' ') || false
+    grid[column]&.none?('◯') || false
   end
 
   private

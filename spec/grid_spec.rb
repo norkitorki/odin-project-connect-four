@@ -13,9 +13,9 @@ describe Grid do
         expect(print_grid.to_s).to eq(
           <<~GRID
             \n║───║───║───║
-            ║   ║   ║   ║
+            ║ ◯ ║ ◯ ║ ◯ ║
             ╠═══╬═══╬═══╣
-            ║   ║   ║   ║
+            ║ ◯ ║ ◯ ║ ◯ ║
             ╚═══╩═══╩═══╝
               0   1   2
           GRID
@@ -30,9 +30,9 @@ describe Grid do
         expect(print_grid.to_s).to eq(
           <<~GRID
             \n║───║───║───║
-            ║   ║ X ║   ║
+            ║ ◯ ║ X ║ ◯ ║
             ╠═══╬═══╬═══╣
-            ║   ║ X ║   ║
+            ║ ◯ ║ X ║ ◯ ║
             ╚═══╩═══╩═══╝
               0   1   2
           GRID
@@ -59,7 +59,7 @@ describe Grid do
         disk = 'O'
         column = 1
         grid.place(disk, column)
-        expect(grid.grid[1]).to eq([' ', ' ', ' ', ' ', ' ', disk])
+        expect(grid.grid[1]).to eq(['◯', '◯', '◯', '◯', '◯', disk])
       end
     end
 
@@ -94,7 +94,7 @@ describe Grid do
 
     it 'should reset/initialize the grid' do
       pre_reset_grid = reset_grid.grid
-      expected_grid = [[' ', ' ', ' ']] * 3
+      expected_grid = [['◯', '◯', '◯']] * 3
       expect { reset_grid.reset }.to change { reset_grid.grid }.from(pre_reset_grid).to(expected_grid)
     end
   end
