@@ -62,8 +62,7 @@ class ConnectFour
   end
 
   def game_over?
-    vertical_match? || horizontal_match? || diagonal_match? ||
-      diagonal_match?(grid_board.grid.reverse)
+    vertical_match? || horizontal_match? || diagonal_match? || diagonal_match?(grid_board.grid.reverse)
   end
 
   def draw?
